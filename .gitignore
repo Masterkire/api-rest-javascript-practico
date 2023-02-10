@@ -105,3 +105,10 @@ dist
 
 # Secrets.js (API KEY)
 src/secrets.js
+
+# Images files
+img/
+img/*.jpg
+img/*.png
+img/pelis/*.jpg
+img/pelis/*.png
