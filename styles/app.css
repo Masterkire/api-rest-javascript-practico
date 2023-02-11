@@ -32,7 +32,8 @@ body {
 }
 
 a, li {
-    font-size: 1.6rem;  
+    font-size: 1.6rem;
+    text-decoration: none;
 }
 
 img {
@@ -49,12 +50,23 @@ h2 {
     text-align: left;
 }
 
+h3 {
+    font-size: 1.6rem;
+    color: white;
+}
+
 article {
     width: 90%;
     margin: auto;
 }
 
 .navbar {
+    --bs-bg-opacity: .4;
+    z-index: 10;
+}
+
+.navbar:hover {
+    --bs-bg-opacity: 1;
     z-index: 10;
 }
 
@@ -111,11 +123,26 @@ main {
 
 .estrenos span{
     min-width: 21.6rem;
-    /* min-width: 33.2rem; */
     overflow-x: hidden;
 }
 
 .estrenos span:hover{
     min-width: 33.2rem;
     overflow-x: hidden;
+}
+
+footer {
+    background-color: #000;
+}
+
+footer span {
+    color: white;
+    font-size: 2.6rem;
+    margin: .5rem;
+}
+
+footer article {
+    padding: 2rem;
+} footer a {
+    color: white;
 }
