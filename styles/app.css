@@ -146,3 +146,24 @@ footer article {
 } footer a {
     color: white;
 }
+
+@media (max-width: 768px) {
+
+    .banner {
+        height: 100vh;
+    }
+
+    .carusel {
+        height: 220px;
+        width: 90%;
+        margin: auto;
+        overflow-x: hidden;
+    }
+    
+    .carusel span{
+        min-width: 14.7rem;
+        overflow-x: hidden;
+        margin: 0 1.7rem;
+    }
+    
+}
