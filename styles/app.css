@@ -3,6 +3,7 @@
 :root{
     --green: #27ae60;
     --black: rgb(23, 23, 23);
+    --black-transparent: rgba(23, 23, 23, 0.4);
     --light-color: #777;
     --bg-color: #e6e6e6;
     --border: .1rem solid rgba(0,0,0,.2);
@@ -56,6 +57,7 @@ h3 {
 }
 
 article {
+    position: relative;
     width: 90%;
     margin: auto;
 }
@@ -106,12 +108,45 @@ main {
     width: 90%;
     margin: auto;
     overflow-x: hidden;
+    
 }
 
-.carusel span{
+.carusel-prev,
+.carusel-next {
+    position: absolute;
+    height: 100%;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    opacity: 0.0;
+    z-index: 10;
+}
+
+.carusel-prev {
+    top: 0;
+    left: 0;
+}
+.carusel-next {
+    top: 0;
+    right: 0;
+}
+
+.carusel-prev:hover,
+.carusel-next:hover {
+    background-color: var(--black-transparent);
+    opacity: 1;
+}
+
+.carusel .content-img{
     min-width: 21.6rem;
     overflow-x: hidden;
     margin: 0 1.6rem;
+    translate: -23.2rem;
 }
 
 .estrenos {
@@ -148,10 +183,6 @@ footer article {
 }
 
 @media (max-width: 768px) {
-
-    .banner {
-        height: 100vh;
-    }
 
     .carusel {
         height: 220px;
