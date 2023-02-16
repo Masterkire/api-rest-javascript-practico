@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MasterMovies</title>
+    <title>Categorias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./styles/app.css">
+    <link rel="stylesheet" href="./styles/categories.css">
 </head>
 <body>
     <header id="header">
@@ -21,7 +22,7 @@
                 <div class="collapse navbar-collapse " id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                            <a class="nav-link"  href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pelis</a>
@@ -33,7 +34,7 @@
                             <a class="nav-link">Mi lista</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="categorias.html">Categorias</a>
+                            <a class="nav-link active" aria-current="page" href="categorias.html">Categorias</a>
                         </li>
                     </ul>
 
@@ -53,92 +54,19 @@
             </div>
         </nav>
 
-        <section class="banner">
-            <!-- <img src="img/quantumania.jpg" alt=""> -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="20" class="active" aria-current="true" aria-label="Slide 21"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="./img/pelis/quantumania.jpg">
-                            <img src="img/quantumania.jpg" class="d-block w-100" alt="...">
-                        </picture>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
-
     </header>
     
     <main>
         <section class="container-fluid">
             <div class="row">
                 <div class="col position-relative">
-                    <article>
-                        <h2>Populares en MasterCinema</h2>
+                    <article class="content-h1">
+                        <h1>Categorias</h1>
                     </article>
 
-                    <span class="carusel-prev"><i class="bi bi-arrow-left-short"></i></span>
-                    <span class="carusel-next"><i class="bi bi-arrow-right-short"></i></span>
-
-                    <article id="populares" class="carusel d-flex justify-content-start">
-                        <!-- 
-                        <span class="content-img">
-                            <img src="img/pelis/avatar.jpg" alt="">
-                        </span>
+                    <article class="content-categorias d-flex flex-wrap justify-content-center">
+                        <!-- <div class="content-category"><h3 class="category-title">Populares</h3></div>
                          -->
-                    </article>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <article>
-                        <h2>Accion</h2>
-                    </article>
-                    <article id="accion" class="carusel d-flex justify-content-start">
-                        <!-- <span class="content-img">
-                            <img src="img/pelis/avatar.jpg" alt="">
-                        </span>
-                         -->
-                    </article>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <article>
-                        <h2>Aventura</h2>
-                    </article>
-                    <article id="aventura" class="carusel d-flex justify-content-start">
-                        <!-- <span class="content-img">
-                            <img src="img/pelis/avatar.jpg" alt="">
-                        </span>
-                         -->
-                    </article>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <article>
-                        <h2>Estrenos</h2>
-                    </article>
-                    <article id="estrenos" class="estrenos d-flex justify-content-start">
-                        <!-- 
-                        <span class="content-img">
-                            <img src="img/pelis/avatar.jpg" alt="">
-                        </span> -->
                     </article>
                 </div>
             </div>
@@ -174,7 +102,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/secrets.js"></script>
-    <script src="./src/main.js"></script>
+    <script src="./src/categories.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
