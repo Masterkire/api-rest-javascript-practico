@@ -12,9 +12,7 @@ async function getTrendingMoviesPreview() {
         const carouselInner = document.querySelector('.carousel-inner');
         const carouselIndicators = document.querySelector('.carousel-indicators');
         const button = document.createElement('button');
-        const peli1 = movies[0];
-        
-
+        const populares = document.getElementById('populares');
         console.log(count);
         
 
@@ -31,7 +29,6 @@ async function getTrendingMoviesPreview() {
         img.classList.add('d-block', 'w-100');
 
         carouselIndicators.appendChild(button);
-
         picture.appendChild(source);
         picture.appendChild(img);
         carouselItem.appendChild(picture);
@@ -41,7 +38,88 @@ async function getTrendingMoviesPreview() {
         carouselIndicators.firstElementChild.classList.add('active');
         carouselItem.firstElementChild.classList.add('active');
         count++;
+
+        /* Populares */
+        const span = document.createElement('span');
+        const imgPopulares = document.createElement('img');
+
+        span.classList.add('content-img');
+        imgPopulares.setAttribute('src', 'https://www.themoviedb.org/t/p/original/' + movie.poster_path);
+
+        span.appendChild(imgPopulares);
+        populares.appendChild(span);
+
+    });
+}
+
+async function getMoviesAccion() {
+    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key='+API_KEY);
+    const data = await res.json();
+    let count = 0;
+
+    const movies = data.results;
+    movies.forEach(movie => {
+        
+        const accion = document.getElementById('accion');
+
+        /* Populares */
+        const span = document.createElement('span');
+        const imgAccion = document.createElement('img');
+
+        span.classList.add('content-img');
+        imgAccion.setAttribute('src', 'https://www.themoviedb.org/t/p/original/' + movie.poster_path);
+
+        span.appendChild(imgAccion);
+        accion.appendChild(span);
+        
+    });
+}
+
+async function getMoviesAventura() {
+    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key='+API_KEY);
+    const data = await res.json();
+
+    const movies = data.results;
+    movies.forEach(movie => {
+        
+        const aventura = document.getElementById('aventura');
+
+        /* Populares */
+        const span = document.createElement('span');
+        const imgAventura = document.createElement('img');
+
+        span.classList.add('content-img');
+        imgAventura.setAttribute('src', 'https://www.themoviedb.org/t/p/original/' + movie.poster_path);
+
+        span.appendChild(imgAventura);
+        aventura.appendChild(span);
+
+    });
+}
+
+async function getMoviesEstrenos() {
+    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key='+API_KEY);
+    const data = await res.json();
+
+    const movies = data.results;
+    movies.forEach(movie => {
+        
+        const estrenos = document.getElementById('estrenos');
+
+        /* Populares */
+        const span = document.createElement('span');
+        const imgEstrenos = document.createElement('img');
+
+        span.classList.add('content-img');
+        imgEstrenos.setAttribute('src', 'https://www.themoviedb.org/t/p/original/' + movie.poster_path);
+
+        span.appendChild(imgEstrenos);
+        estrenos.appendChild(span);;
+    
     });
 }
 
 getTrendingMoviesPreview();
+getMoviesAccion();
+getMoviesAventura();
+getMoviesEstrenos();
