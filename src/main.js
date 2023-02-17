@@ -124,10 +124,3 @@ async function getMoviesEstrenos() {
     
     });
 }
-
-
-
-getTrendingMoviesPreview();
-getMoviesAccion();
-getMoviesAventura();
-getMoviesEstrenos();
