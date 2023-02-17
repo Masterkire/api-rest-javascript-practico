@@ -112,6 +112,7 @@ main {
     justify-content: start;
     align-items: center;
     overflow-x: scroll;
+    overflow-y: hidden;
     height: 300px;
     width: 90%;
     margin: auto;
@@ -120,6 +121,20 @@ main {
 .contenedor-estrenos {
     height: 46rem;
 }
+
+.contenedor-slider::-webkit-scrollbar,
+.contenedor-estrenos::-webkit-scrollbar {
+    /* background-color: #000;
+    border-radius: 1rem;
+    height: 5px; */
+    display: none;
+}
+
+/* .contenedor-slider::-webkit-scrollbar-thumb,
+.contenedor-estrenos::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.234);
+    border-radius: 1rem;
+} */
 
 .carusel {
     height: 300px;
