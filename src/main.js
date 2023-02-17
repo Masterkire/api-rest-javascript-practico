@@ -52,6 +52,7 @@ async function getTrendingMoviesPreview() {
         const span = document.createElement('span');
         const imgPopulares = document.createElement('img');
 
+        span.classList.add('popular');
         span.classList.add('content-img');
         imgPopulares.setAttribute('src', 'https://www.themoviedb.org/t/p/original/' + movie.poster_path);
 
@@ -124,3 +125,50 @@ async function getMoviesEstrenos() {
     
     });
 }
+
+const slider = document.getElementById('slider');
+const sliderAccion = document.getElementById('slider-accion');
+const sliderAventura = document.getElementById('slider-aventura');
+const sliderEstrenos = document.getElementById('slider-estrenos');
+const populares = document.querySelector('#populares');
+
+// crear botones personalizados
+const leftButton = document.getElementById('1');
+leftButton.addEventListener('click', () => {
+    slider.scrollLeft -= 248;
+});
+
+const rightButton = document.getElementById('2');
+rightButton.addEventListener('click', () => {
+    slider.scrollLeft += 248;
+});
+
+const leftButtonAccion = document.getElementById('3');
+leftButtonAccion.addEventListener('click', () => {
+    sliderAccion.scrollLeft -= 248;
+});
+
+const rightButtonAccion = document.getElementById('4');
+rightButtonAccion.addEventListener('click', () => {
+    sliderAccion.scrollLeft += 248;
+});
+
+const leftButtonAventura = document.getElementById('5');
+leftButtonAventura.addEventListener('click', () => {
+    sliderAventura.scrollLeft -= 248;
+});
+
+const rightButtonAventura = document.getElementById('6');
+rightButtonAventura.addEventListener('click', () => {
+    sliderAventura.scrollLeft += 248;
+});
+
+const leftButtonEstreno = document.getElementById('7');
+leftButtonEstreno.addEventListener('click', () => {
+    sliderEstrenos.scrollLeft -= 216;
+});
+
+const rightButtonEstreno = document.getElementById('8');
+rightButtonEstreno.addEventListener('click', () => {
+    sliderEstrenos.scrollLeft += 216;
+});
