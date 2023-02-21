@@ -33,7 +33,7 @@
                             <a class="nav-link">Mi lista</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="categorias.html">Categorias</a>
+                            <a class="nav-link" href="#category=">Categorias</a>
                         </li>
                     </ul>
 
@@ -81,10 +81,10 @@
     </header>
     
     <main>
-        <section class="container-fluid">
-            <div class="row">
-                <div class="col position-relative">
-                    <article>
+        <section class="container-fluid conteiner-main">
+            <div class="row" id="row1">
+                <div class="col position-relative" id="col1">
+                    <article id="artRow1">
                         <h2>Populares en MasterCinema</h2>
                     </article>
 
@@ -93,19 +93,19 @@
 
                     <div id="slider" class="contenedor-slider">
                         <article id="populares" class="carusel d-flex justify-content-start">
-                        <!-- 
-                            <span class="content-img">
+                        
+                            <!-- <span class="content-img">
                                 <img src="img/pelis/avatar.jpg" alt="">
-                            </span> 
-                        -->
+                            </span>  -->
+                       
                         </article>        
                     </div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="row2">
                 <div class="col position-relative">
-                    <article>
+                    <article id="artRow2">
                         <h2>Accion</h2>
                     </article>
 
@@ -123,9 +123,9 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="row3">
                 <div class="col position-relative">
-                    <article>
+                    <article id="artRow3">
                         <h2>Aventura</h2>
                     </article>
 
@@ -143,9 +143,9 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="row4">
                 <div class="col position-relative">
-                    <article>
+                    <article id="artRow4">
                         <h2>Estrenos</h2>
                     </article>
 
@@ -194,6 +194,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/secrets.js"></script>
+    <script src="./src/nodes.js"></script>
     <script src="./src/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="./src/navigation.js"></script>

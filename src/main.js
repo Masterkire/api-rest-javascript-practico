@@ -1,18 +1,3 @@
-const slider = document.getElementById('slider');
-const sliderAccion = document.getElementById('slider-accion');
-const sliderAventura = document.getElementById('slider-aventura');
-const sliderEstrenos = document.getElementById('slider-estrenos');
-const populares = document.querySelector('#populares');
-
-const leftButton = document.getElementById('1');
-const rightButton = document.getElementById('2');
-const leftButtonAccion = document.getElementById('3');
-const rightButtonAccion = document.getElementById('4');
-const leftButtonAventura = document.getElementById('5');
-const rightButtonAventura = document.getElementById('6');
-const leftButtonEstreno = document.getElementById('7');
-const rightButtonEstreno = document.getElementById('8');
-
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
     headers: {
@@ -28,17 +13,13 @@ async function getTrendingMoviesPreview() {
     let count = 0;
 
     const movies = data.results;
+    console.log(movies);
     movies.forEach(movie => {
         const carouselItem = document.createElement('div');
         const picture = document.createElement('picture');
         const source = document.createElement('source');
         const img = document.createElement('img');
-        const carouselInner = document.querySelector('.carousel-inner');
-        const carouselIndicators = document.querySelector('.carousel-indicators');
         const button = document.createElement('button');
-        const populares = document.getElementById('populares');
-        console.log(count);
-        
 
         button.setAttribute('type', 'button');
         button.setAttribute('data-bs-target', '#carouselExampleIndicators');
@@ -83,8 +64,6 @@ async function getMoviesAccion() {
 
     const movies = data.results;
     movies.forEach(movie => {
-        
-        const accion = document.getElementById('accion');
 
         /* Populares */
         const span = document.createElement('span');
@@ -104,8 +83,6 @@ async function getMoviesAventura() {
 
     const movies = data.results;
     movies.forEach(movie => {
-        
-        const aventura = document.getElementById('aventura');
 
         /* Populares */
         const span = document.createElement('span');
@@ -125,8 +102,6 @@ async function getMoviesEstrenos() {
 
     const movies = data.results;
     movies.forEach(movie => {
-        
-        const estrenos = document.getElementById('estrenos');
 
         /* Populares */
         const span = document.createElement('span');
@@ -138,6 +113,30 @@ async function getMoviesEstrenos() {
         span.appendChild(imgEstrenos);
         estrenos.appendChild(span);;
     
+    });
+}
+
+async function getCategoriesPreview() {
+    const {data} = await api('genre/movie/list');
+
+    const categories = data.genres;
+    console.log(categories);
+    categories.forEach(category => {
+        
+        const contentCategory = document.createElement('div');
+        const categoryTitle = document.createElement('h3');
+        const categoryTitleText = document.createTextNode(category.name);
+        
+        cantentCategorias.classList.add('content-categorias', 'd-flex', 'flex-wrap', 'justify-content-center');
+        contentCategory.classList.add('content-category');
+        categoryTitle.classList.add('category-title');
+        categoryTitle.setAttribute('id', category.id);
+        artRow1.classList.add('content-h1');
+
+        categoryTitle.appendChild(categoryTitleText);
+        contentCategory.appendChild(categoryTitle);
+        cantentCategorias.appendChild(contentCategory);
+        col1.appendChild(cantentCategorias);
     });
 }
 

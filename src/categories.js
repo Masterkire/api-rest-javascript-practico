@@ -8,6 +8,8 @@ const api = axios.create({
     },
 });
 
+const contentMain = document.querySelector('.container-fluid');
+
 async function getCategoriesPreview() {
     const {data} = await api('genre/movie/list');
 
