@@ -14,6 +14,20 @@ async function getTrendingMoviesPreview() {
 
     const movies = data.results;
     console.log(movies);
+
+    carouselIndicators.innerHTML = "";
+    button.setAttribute('type', 'button');
+    button.setAttribute('data-bs-target', '#carouselExampleIndicators');
+    button.setAttribute('data-bs-slide-to', count);
+    button.setAttribute('area-label', 'slide ' + (count + 1));
+    carouselInner.innerHTML = "";
+    const carouselItem = document.createElement('div');
+    const picture = document.createElement('picture');
+    const source = document.createElement('source');
+    const img = document.createElement('img');
+    const button = document.createElement('button');
+
+
     movies.forEach(movie => {
         const carouselItem = document.createElement('div');
         const picture = document.createElement('picture');
@@ -63,6 +77,9 @@ async function getMoviesAccion() {
     let count = 0;
 
     const movies = data.results;
+    
+    accion.innerHTML = "";
+
     movies.forEach(movie => {
 
         /* Populares */
@@ -82,6 +99,9 @@ async function getMoviesAventura() {
     const {data} = await api('trending/movie/day');
 
     const movies = data.results;
+
+    aventura.innerHTML = "";
+
     movies.forEach(movie => {
 
         /* Populares */
@@ -101,6 +121,9 @@ async function getMoviesEstrenos() {
     const {data} = await api('trending/movie/day');
 
     const movies = data.results;
+
+    estrenos.innerHTML = "";
+
     movies.forEach(movie => {
 
         /* Populares */
@@ -120,23 +143,24 @@ async function getCategoriesPreview() {
     const {data} = await api('genre/movie/list');
 
     const categories = data.genres;
-    console.log(categories);
+    /* console.log(categories); */
+
+    contentCategorias.innerHTML = "";
+
     categories.forEach(category => {
         
         const contentCategory = document.createElement('div');
         const categoryTitle = document.createElement('h3');
         const categoryTitleText = document.createTextNode(category.name);
         
-        cantentCategorias.classList.add('content-categorias', 'd-flex', 'flex-wrap', 'justify-content-center');
         contentCategory.classList.add('content-category');
         categoryTitle.classList.add('category-title');
         categoryTitle.setAttribute('id', category.id);
-        artRow1.classList.add('content-h1');
+        
 
         categoryTitle.appendChild(categoryTitleText);
         contentCategory.appendChild(categoryTitle);
-        cantentCategorias.appendChild(contentCategory);
-        col1.appendChild(cantentCategorias);
+        contentCategorias.appendChild(contentCategory);
     });
 }
 

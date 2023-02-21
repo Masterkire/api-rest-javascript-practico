@@ -32,7 +32,7 @@ const h2ArtRow4 = artRow4.firstElementChild;
 
 /* Categorias */
 
-const cantentCategorias = document.createElement('article');
+const contentCategorias = document.getElementById('contentCategorias');
 
 /* h2ArtRow1.firstChild.textContent = "Preferidas de Master"; */
 

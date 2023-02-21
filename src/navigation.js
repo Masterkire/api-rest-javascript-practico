@@ -10,6 +10,8 @@ function navigator() {
         searchPage();
     } else if (location.hash.startsWith('#movie=')){
         moviePage();
+    } else if (location.hash.startsWith('#series=')){
+        seriesPage()
     } else if (location.hash.startsWith('#category=')){
         categoryPage();
     } else {
@@ -29,9 +31,15 @@ function moviePage() {
     console.log('Movie!!');
 }
 
+function seriesPage() {
+    console.log('Series!!');
+}
+
 function categoryPage() {
     console.log('Categories!!');
 
+    contentCategorias.classList.add('d-flex');
+    contentCategorias.classList.remove('inactive');
     bannerSlider.classList.add('inactive');
     row2.classList.add('inactive');
     row3.classList.add('inactive');
@@ -44,12 +52,31 @@ function categoryPage() {
     slider.classList.remove('contenedor-slider');
     h2ArtRow1.classList.add('h1');
     h2ArtRow1.firstChild.textContent = "Categorias";
+    artRow1.classList.add('content-h1');
 
     getCategoriesPreview();
 }
 
 function homePage() {
     console.log('Home!!');
+
+    contentCategorias.classList.remove('d-flex');
+    contentCategorias.classList.add('inactive');
+    bannerSlider.classList.remove('inactive');
+    row2.classList.remove('inactive');
+    row3.classList.remove('inactive');
+    row4.classList.remove('inactive');
+    leftButton.classList.remove('inactive');
+    leftButton.classList.add('carusel-prev');
+    rightButton.classList.remove('inactive');
+    rightButton.classList.add('carusel-next');
+    slider.classList.remove('inactive');
+    slider.classList.add('contenedor-slider');
+    h2ArtRow1.classList.remove('h1');
+    h2ArtRow1.firstChild.textContent = "Populares en MasterCinema";
+    artRow1.classList.remove('content-h1');
+
+
     getTrendingMoviesPreview();
     getMoviesAccion();
     getMoviesAventura();
