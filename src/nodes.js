@@ -34,6 +34,15 @@ const h2ArtRow4 = artRow4.firstElementChild;
 
 const contentCategorias = document.getElementById('contentCategorias');
 
+/* Categorias Movie */
+
+const rowCat = document.getElementById('rowCategory');
+const colCat = document.getElementById('colCategory');
+const artRowCat = document.getElementById('artRowCat');
+const h2artRowCat = artRowCat.firstElementChild;
+const categoryMovie = document.getElementById('categoryMovie');
+
+
 /* h2ArtRow1.firstChild.textContent = "Preferidas de Master"; */
 
 /* botones slider */

@@ -172,6 +172,17 @@ main {
     /* transform: translateX(-23.2rem); */
 }
 
+.artCategoryMovie {
+    width: 90%;
+    margin: auto;
+}
+
+.artCategoryMovie .content-img {
+    width: 21.6rem;
+    min-width: 21.6rem;
+    margin: 0 1.6rem 1.6rem 1.6rem;
+}
+
 .estrenos {
     height: 46rem;
 }
@@ -232,12 +243,13 @@ footer article {
     color: white;
     border-radius: 1rem;
     font-size: 1.6rem;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
 
     .carusel {
-        height: 220px;
+        /* height: 220px; */
         width: 90%;
         margin: auto;
         overflow-x: hidden;
