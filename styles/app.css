@@ -50,12 +50,17 @@ img {
 }
 
 h2 {
-    width: 90%;
-    margin: auto;
+    /* width: 90%; */
+    /* margin: auto; */
     font-size: 3.2rem;
     color: #fff;
     padding: 2rem;
     text-align: left;
+    display: inline-block;
+}
+
+.cont-titulos {
+    padding: 0 8rem;
 }
 
 h3 {
@@ -85,6 +90,25 @@ article {
 .banner {
     width: 100%;
     position: relative;
+}
+
+#arrowBtn {
+    position: absolute;
+    left: 7rem;
+    top: 10rem;
+    font-size: 5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.vermas {
+    color: #fff;
+    font-size: 1.6rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .campana, .user {

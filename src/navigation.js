@@ -1,3 +1,28 @@
+searchFormBtn.addEventListener("click", () => {
+    location.hash = '#search=' + inputSearch.value;
+});
+
+verTendencias.addEventListener("click", () => {
+    location.hash = '#trends';
+});
+
+verAccion.addEventListener("click", () => {
+    location.hash = '#accion';
+});
+
+verAventuras.addEventListener("click", () => {
+    location.hash = '#aventura';
+});
+
+verSeries.addEventListener("click", () => {
+    location.hash = '#series';
+});
+
+arrowBtn.addEventListener("click", () => {
+    console.log('regresando!');
+    history.back();
+});
+
 window.addEventListener('DOMContentLoaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
@@ -23,10 +48,54 @@ function navigator() {
 
 function trendsPage() {
     console.log('TRENDS!!');
+
+    rowCat.classList.remove('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Tendencias";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    getTrendingMovies();
+
+    window.scroll(0, 0);
 }
 
 function searchPage() {
     console.log('Search!!');
+
+    rowCat.classList.remove('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Categorias";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    const [_, query] = location.hash.split('='); // ['#Category', 'id', 'name']
+
+    getMoviesBySearch(query);
+
+    window.scroll(0, 0);
 }
 
 function moviePage() {
@@ -57,6 +126,7 @@ function categoryPage() {
     h2ArtRow1.classList.add('h1');
     h2ArtRow1.firstChild.textContent = "Categorias";
     artRow1.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
 
     getCategoriesPreview();
     
@@ -81,6 +151,7 @@ function moviCategoryPage() {
     h2artRowCat.classList.add('h1');
     h2artRowCat.firstChild.textContent = "Categorias";
     artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
 
     const [_, categoriData] = location.hash.split('='); // ['#Category', 'id', 'name']
     const [categoryId, categoryName] = categoriData.split('-');
@@ -109,6 +180,7 @@ function homePage() {
     h2ArtRow1.firstChild.textContent = "Populares en MasterCinema";
     artRow1.classList.remove('content-h1');
     rowCat.classList.add('inactive');
+    arrowBtn.classList.add('inactive');
 
 
     getTrendingMoviesPreview();

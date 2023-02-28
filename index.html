@@ -39,8 +39,8 @@
 
                     <div class="navbar-nav ms-auto">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-dark text-white" placeholder="Buscar">
-                            <div class="input-group-append">
+                            <input id="inputSearch" type="text" class="form-control bg-dark text-white" placeholder="Buscar">
+                            <div id="searchBtn" class="input-group-append">
                                 <span class="input-group-text">
                                     <i class="bi bi-search"></i>
                                 </span>
@@ -52,6 +52,10 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container inactive" id="arrowBtn">
+            <span ><i class="bi bi-arrow-left"></i></span>
+        </div>
 
         <section class="banner">
             <!-- <img src="img/quantumania.jpg" alt=""> -->
@@ -97,8 +101,9 @@
 
             <div class="row" id="row1">
                 <div class="col position-relative" id="col1">
-                    <article id="artRow1">
+                    <article id="artRow1" class="cont-titulos d-flex justify-content-between">
                         <h2>Populares en MasterCinema</h2>
+                        <div id="verTendencias" class="vermas"><span>Ver más</span><i class="bi bi-arrow-right ms-2 fs-1"></i></div>
                     </article>
 
                     <span id="1" class="carusel-prev"><i class="bi bi-arrow-left-short"></i></span>
@@ -123,8 +128,9 @@
 
             <div class="row" id="row2">
                 <div class="col position-relative">
-                    <article id="artRow2">
+                    <article id="artRow2" class="cont-titulos d-flex justify-content-between">
                         <h2>Accion</h2>
+                        <div id="verAccion" class="vermas"><span>Ver más</span><i class="bi bi-arrow-right ms-2 fs-1"></i></div>
                     </article>
 
                     <span id="3" class="carusel-prev"><i class="bi bi-arrow-left-short"></i></span>
@@ -143,8 +149,9 @@
 
             <div class="row" id="row3">
                 <div class="col position-relative">
-                    <article id="artRow3">
+                    <article id="artRow3" class="cont-titulos d-flex justify-content-between">
                         <h2>Aventura</h2>
+                        <div id="verAventuras" class="vermas"><span>Ver más</span><i class="bi bi-arrow-right ms-2 fs-1"></i></div>
                     </article>
 
                     <span id="5" class="carusel-prev"><i class="bi bi-arrow-left-short"></i></span>
@@ -163,8 +170,9 @@
 
             <div class="row" id="row4">
                 <div class="col position-relative">
-                    <article id="artRow4">
+                    <article id="artRow4" class="cont-titulos d-flex justify-content-between">
                         <h2>Series de TV</h2>
+                        <div id="verSeries" class="vermas"><span>Ver más</span><i class="bi bi-arrow-right ms-2 fs-1"></i></div>
                     </article>
 
                     <span id="7" class="carusel-prev"><i class="bi bi-arrow-left-short"></i></span>

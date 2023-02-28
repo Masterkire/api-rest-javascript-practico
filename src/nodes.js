@@ -1,3 +1,9 @@
+/* Nav */
+
+const inputSearch = document.getElementById('inputSearch');
+const searchFormBtn = document.getElementById('searchBtn');
+const arrowBtn = document.getElementById('arrowBtn');
+
 /* Slider banner */
 
 const bannerSlider = document.querySelector('.banner');
@@ -29,6 +35,10 @@ const h2ArtRow1 = artRow1.firstElementChild;
 const h2ArtRow2 = artRow2.firstElementChild;
 const h2ArtRow3 = artRow3.firstElementChild;
 const h2ArtRow4 = artRow4.firstElementChild;
+const verTendencias = document.getElementById('verTendencias');
+const verAccion = document.getElementById('verAccion');
+const verAventuras = document.getElementById('verAventuras');
+const verSeries = document.getElementById('verSeries');
 
 /* Categorias */
 

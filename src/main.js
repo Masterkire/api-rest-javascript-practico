@@ -186,6 +186,27 @@ async function getMoviesCategory(id, name) {
     
 }
 
+async function getMoviesBySearch(query) {
+    const {data} = await api('search/multi', {
+        params: {
+            query,
+        },
+    });
+    const movies = data.results;
+    h2artRowCat.innerHTML = decodeURI(query);
+
+    creatMovies(movies, categoryMovie);
+}
+
+async function getTrendingMovies() {
+    const {data} = await api('trending/movie/day');
+    let count = 0;
+
+    const movies = data.results;
+
+    creatMovies(movies, categoryMovie);
+}
+
 // crear botones personalizados
 
 leftButton.addEventListener('click', () => {
