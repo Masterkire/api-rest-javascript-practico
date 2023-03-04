@@ -18,6 +18,9 @@ function creatMovies(movies, container) {
         /* Populares */
         const span = document.createElement('span');
         const imgAccion = document.createElement('img');
+        span.addEventListener('click', () => {
+            location.hash = '#movie=' + movie.id;
+        });
 
         span.classList.add('content-img');
         imgAccion.setAttribute('src', 'https://www.themoviedb.org/t/p/original/' + movie.poster_path);
@@ -198,6 +201,8 @@ async function getMoviesBySearch(query) {
     creatMovies(movies, categoryMovie);
 }
 
+/* Pagina de pelis y series en categoria */
+
 async function getTrendingMovies() {
     const {data} = await api('trending/movie/day');
     let count = 0;
@@ -205,6 +210,49 @@ async function getTrendingMovies() {
     const movies = data.results;
 
     creatMovies(movies, categoryMovie);
+}
+
+async function getAccionMovies() {
+    const {data} = await api('discover/movie', {
+        params: {
+            with_genres: '28',
+        },
+    });
+    let count = 0;
+
+    const movies = data.results;
+
+    creatMovies(movies, categoryMovie);
+}
+
+async function getAventuraMovies() {
+    const {data} = await api('trending/movie/day', {
+        params: {
+            with_genres: '12',
+        },
+    });
+    let count = 0;
+
+    const movies = data.results;
+
+    creatMovies(movies, categoryMovie);
+}
+
+async function getSeriesMovies() {
+    const {data} = await api('discover/tv');
+    let count = 0;
+
+    const movies = data.results;
+
+    creatMovies(movies, categoryMovie);
+}
+
+async function getMovieById(movieId) {
+    const {data: movie} = await api('movie/' + movieId);
+    
+    /* console.log(movies); */
+
+    
 }
 
 // crear botones personalizados

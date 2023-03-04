@@ -31,11 +31,19 @@ function navigator() {
 
     if (location.hash.startsWith('#trends')) {
         trendsPage();
+    } else if (location.hash.startsWith('#accion')){
+        accionPage()
+    } else if (location.hash.startsWith('#aventura')){
+        aventuraPage()
+    } else if (location.hash.startsWith('#series')){
+        seriesPage()
     } else if (location.hash.startsWith('#search=')){
         searchPage();
+    } else if (location.hash.startsWith('#movies')){
+        moviesPage();
     } else if (location.hash.startsWith('#movie=')){
-        moviePage();
-    } else if (location.hash.startsWith('#series=')){
+        movieDetailPage();
+    } else if (location.hash.startsWith('#series')){
         seriesPage()
     } else if (location.hash.startsWith('#categorys')){
         categoryPage();
@@ -71,6 +79,81 @@ function trendsPage() {
     window.scroll(0, 0);
 }
 
+function accionPage() {
+    console.log('Accion!!');
+
+    rowCat.classList.remove('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Accion";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    getAccionMovies()
+
+    window.scroll(0, 0);
+}
+
+function aventuraPage() {
+    console.log('TRENDS!!');
+
+    rowCat.classList.remove('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Aventura";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    getAventuraMovies()
+
+    window.scroll(0, 0);
+}
+
+function seriesPage() {
+    console.log('TRENDS!!');
+
+    rowCat.classList.remove('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Series";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    getSeriesMovies()
+
+    window.scroll(0, 0);
+}
+
 function searchPage() {
     console.log('Search!!');
 
@@ -98,12 +181,81 @@ function searchPage() {
     window.scroll(0, 0);
 }
 
-function moviePage() {
-    console.log('Movie!!');
+function moviesPage() {
+    console.log('Movies!!');
+
+    rowCat.classList.remove('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Movies";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    getTrendingMovies();
+
+    window.scroll(0, 0);
 }
 
-function seriesPage() {
+function movieDetailPage() {
+    console.log('Movies!!');
+
+    rowCat.classList.add('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Movies";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    // ['#movie', 'id']
+    const [_, movieId] = location.hash.split('='); 
+    getMovieById(movieId);
+
+    window.scroll(0, 0);
+}
+
+function seriesFilterPage() {
     console.log('Series!!');
+
+    rowCat.classList.remove('inactive');
+    bannerSlider.classList.add('inactive');
+    row1.classList.add('inactive');
+    row2.classList.add('inactive');
+    row3.classList.add('inactive');
+    row4.classList.add('inactive');
+    leftButton.classList.add('inactive');
+    leftButton.classList.remove('carusel-prev');
+    rightButton.classList.add('inactive');
+    rightButton.classList.remove('carusel-next');
+    slider.classList.add('inactive');
+    slider.classList.remove('contenedor-slider');
+    h2artRowCat.classList.add('h1');
+    h2artRowCat.firstChild.textContent = "Series";
+    artRowCat.classList.add('content-h1');
+    arrowBtn.classList.remove('inactive');
+
+    getSeriesMovies()
+
+    window.scroll(0, 0);
 }
 
 function categoryPage() {
@@ -167,6 +319,7 @@ function homePage() {
     contentCategorias.classList.remove('d-flex');
     contentCategorias.classList.add('inactive');
     bannerSlider.classList.remove('inactive');
+    row1.classList.remove('inactive');
     row2.classList.remove('inactive');
     row3.classList.remove('inactive');
     row4.classList.remove('inactive');

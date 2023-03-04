@@ -30,6 +30,7 @@ html {
 
 body {
     background-color: var(--black);
+    color: white;
 }
 
 .inactive {
@@ -49,9 +50,138 @@ img {
     cursor: pointer;
 }
 
+.banner-movie {
+    width: 100%;
+    position: relative;
+}
+
+.banner-movie::after {
+    content: "";
+    position: absolute;
+    /* width: 100%; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0; /* aquí puedes ajustar la posición del desvanecimiento */
+    border: none;
+    background: linear-gradient(to left, transparent, var(--black)); /* el gradiente va desde transparente hasta negro */
+    z-index: 1;
+}
+
+.info {
+    position: absolute;
+    left: 8rem;
+    top: 30%;
+    width: 30%;
+    z-index: 5;
+}
+
+.titulo-peli {
+    color: white;
+    font-size: 4.8rem;
+    margin-bottom: 7rem;
+}
+
+.descripcion {
+    color: white;
+    font-size: 2.4rem;
+    margin-bottom: 7rem;
+}
+
+.categoria-elenco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #e6e6e6;
+    margin-bottom: 7rem;
+}
+
+.categoria-elenco .elenco,
+.categoria-elenco .categoria {
+    width: 40%;
+}
+
+.btn-play {
+    width: 100%;
+    height: 4rem;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.ranking {
+    position: absolute;
+    width: 20%;
+    right: 8rem;
+    top: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ranking .votos,
+.ranking .promedio,
+.ranking .popularidad {
+    width: 10rem;
+}
+
+.ranking h4 {
+    text-align: center;
+}
+
+.ranking span {
+    display: block;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background: #e6e6e6;
+    color: #000;
+    text-align: center;
+    line-height: 5rem;
+    margin: auto;
+}
+
+.actors {
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    left: 8rem;
+    bottom: -10rem;
+    display: flex;
+    justify-content: center;
+    z-index: 12;
+}
+
+.actors .actor {
+    width: 9rem;
+    text-align: center;
+    margin: 3rem;
+}
+
+.actors .actor span {
+    display: block;
+    border-radius: 50%;
+    border: none;
+    background: #e6e6e6;
+    width: 8rem;
+    height: 8rem;
+    margin: auto;
+}
+
+.actors .actor span img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#rowRecomendados {
+    margin: 20rem 0;
+}
+
 h2 {
-    /* width: 90%; */
-    /* margin: auto; */
     font-size: 3.2rem;
     color: #fff;
     padding: 2rem;
@@ -93,13 +223,14 @@ article {
 }
 
 #arrowBtn {
-    position: absolute;
+    width: 7rem;
+    position: fixed;
     left: 7rem;
     top: 10rem;
     font-size: 5rem;
     color: white;
     cursor: pointer;
-    z-index: 20;
+    z-index: 9;
 }
 
 .vermas {
